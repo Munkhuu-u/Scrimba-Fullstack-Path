@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.cdnfonts.com/css/cursed-timer-ulil" rel="stylesheet">
+    </head>
+    <body>
+        <div class="bigContainer">
+        <div class="container">
+            <div class="home">
+                <h3>HOME</h3>
+                <p id="homeScore">0</p>
+                <div>
+                    <button onclick="addOnePointHome()">+1</button>
+                    <button onclick="addOnePointHome(); addOnePointHome()">+2</button>
+                    <button onclick="addOnePointHome(); addOnePointHome(); addOnePointHome()">+3</button>                    
+                </div>
+            </div>
+            <div class="guest">
+                <h3>GUEST</h3>
+                <p id="guestScore">0</p>
+                <div>
+                    <button onclick="addOnePointGuest()">+1</button>
+                    <button onclick="addOnePointGuest(); addOnePointGuest()">+2</button>
+                    <button onclick="addOnePointGuest(); addOnePointGuest(); addOnePointGuest()">+3</button>
+                </div>
+            </div>
+        </div> <!-- <div class="container"> -->
+        
+            <div class="Additional">
+                <div id="leaderDiv">
+                    <p id="leader">Leader: </p>
+                    <button onclick="newGame() ">RESTART</button>
+                </div>
+                <div id="periodDiv">
+                    <button onclick="lowerPeriod()">  <  </button>
+                    <p id="period">Period: 0</p>
+                    <button onclick="plusPeriod()">  >  </button>
+                </div>
+                <div id="timerDiv">
+                    <button onclick="timerID()">Pause/ Play</button>
+                    <p id="timer">Time: 10:0</p>
+                </div>
+            </div>
+            
+        <script src="index.js"></script>
+    </body>
+</html>
