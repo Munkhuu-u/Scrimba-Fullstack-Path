@@ -7,7 +7,6 @@ html, body {
     padding: 0;
     font-family: 'Roboto';
     color: #222;
-    /* position: relative; */
 }
 
 /* typography */
@@ -66,22 +65,13 @@ main{
 /* modal */
   
 .modal {
-    
-/*
-Challenge:
-1. Make the modal sit on top of the other content. 
-2. Make sure it is centrally aligned both horizontally
-   and vertically (just like in the slide).
-3. When it's positioned correctly, set its display 
-   property to 'none'.
-*/
-    
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: none;
-    z-index: 10;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     height: 420px;
     width: 350px;
     border-radius: 5px;
@@ -93,7 +83,6 @@ Challenge:
 .modal-inner{
     width: 290px;
     margin: 0 auto;
-    position:fixed;
 }
 
 .modal-inner-loading{
@@ -139,6 +128,10 @@ Challenge:
     cursor: pointer;
 }
 
+.modal-btns-reverse{
+    flex-direction: row-reverse;
+}
+
 /* modal input */
 
 input{
@@ -165,3 +158,14 @@ input{
     line-height: 23px;
     margin-bottom: 0;
 }
+
+.idiot-gif{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.idiot-gif img{
+    box-shadow: 1px 1px 3px #999;
+    border-radius: 5px;
+}
+
