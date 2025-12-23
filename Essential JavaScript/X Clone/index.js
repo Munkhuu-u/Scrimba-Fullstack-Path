@@ -19,13 +19,6 @@ document.addEventListener("click", function (e) {
       handle: e.target.previousElementSibling.previousElementSibling.innerText,
       tweetText: e.target.previousElementSibling.value,
     };
-
-    //     {
-    //   handle: `@TomCruise ✅`,
-    //   profilePic: `images/tcruise.png`,
-    //   tweetText: `Yes! Sign me up! 😎🛩`,
-    // },
-
     handleOwnReplyClick(pass);
   }
 });
@@ -35,15 +28,18 @@ function handleOwnReplyClick(pass) {
     return tweet.uuid === pass.uuid;
   });
 
-  console.log("profilePic: ", pass.profilePic);
   let newReply = {
-    profilePic: pass.profilePic,
     handle: pass.handle,
+    profilePic: pass.profilePic,
     tweetText: pass.tweetText,
   };
-  // tweet.replies.push({ pass });
-  console.log("tweet: ", tweet);
+  tweet[0].replies.push(newReply);
+  console.log("tweetsData: ", tweetsData);
+  getFeedHtml();
   render();
+  document
+    .getElementById(`replies-${tweet[0].uuid}`)
+    .classList.remove("hidden");
 }
 
 function handleLikeClick(tweetId) {
@@ -82,6 +78,9 @@ function handleReplyClick(replyId) {
 function handleTweetBtnClick() {
   const tweetInput = document.getElementById("tweet-input");
 
+  console.log("arrFromLS: ", JSON.parse(localStorage.getItem("tweetsData")));
+  console.log("tweetsData: ", tweetsData);
+
   if (tweetInput.value) {
     tweetsData.unshift({
       handle: `@Scrimba`,
@@ -94,6 +93,7 @@ function handleTweetBtnClick() {
       isRetweeted: false,
       uuid: uuidv4(),
     });
+
     render();
     tweetInput.value = "";
   }
@@ -102,7 +102,11 @@ function handleTweetBtnClick() {
 function getFeedHtml() {
   let feedHtml = ``;
 
-  tweetsData.forEach(function (tweet) {
+  const tweetsDataFromLocalStorage = JSON.parse(
+    localStorage.getItem("tweetsData")
+  );
+
+  tweetsDataFromLocalStorage.forEach(function (tweet) {
     let likeIconClass = "";
 
     if (tweet.isLiked) {
@@ -184,6 +188,7 @@ function getFeedHtml() {
 
 function render() {
   document.getElementById("feed").innerHTML = getFeedHtml();
+  localStorage.setItem("tweetsData", JSON.stringify(tweetsData));
 }
 
 render();
