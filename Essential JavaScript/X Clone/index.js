@@ -23,6 +23,12 @@ document.addEventListener("click", function (e) {
   }
 });
 
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+let swipedTweetId = null;
+const threshold = 120;
+
 function handleOwnReplyClick(pass) {
   const tweet = tweetsData.filter((tweet) => {
     return tweet.uuid === pass.uuid;
@@ -149,7 +155,7 @@ function getFeedHtml() {
     `;
 
     feedHtml += `
-        <div class="tweet">
+        <div class="tweet" id="tweet-${tweet.uuid}">
             <div class="tweet-inner">
                 <img src="${tweet.profilePic}" class="profile-pic">
                 <div>
@@ -183,12 +189,48 @@ function getFeedHtml() {
         </div>
 `;
   });
+
   return feedHtml;
 }
 
 function render() {
   document.getElementById("feed").innerHTML = getFeedHtml();
   localStorage.setItem("tweetsData", JSON.stringify(tweetsData));
+
+  document.querySelectorAll(".tweet").forEach((tweet) => {
+    tweet.addEventListener("pointerdown", (e) => {
+      startX = e.clientX;
+      isDragging = true;
+      swipedTweetId = tweet.id.replace("tweet-", "");
+      tweet.setPointerCapture(e.pointerId);
+    });
+
+    tweet.addEventListener("pointermove", (e) => {
+      if (!isDragging) return;
+      currentX = e.clientX;
+
+      if (startX - currentX > 0) {
+        tweet.style.transform = `translateX(-${startX - currentX}px)`;
+      }
+    });
+
+    tweet.addEventListener("pointerup", () => {
+      isDragging = false;
+      tweet.style.transform = "";
+
+      if (startX - currentX > threshold) {
+        deleteTweet(swipedTweetId);
+      }
+    });
+  });
+}
+
+function deleteTweet(tweetId) {
+  const index = tweetsData.findIndex((tweet) => tweet.uuid === tweetId);
+  if (index !== -1) {
+    tweetsData.splice(index, 1);
+  }
+  render();
 }
 
 render();
