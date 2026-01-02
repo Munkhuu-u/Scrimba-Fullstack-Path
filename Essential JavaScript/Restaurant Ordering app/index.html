@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="index.js" type="module"></script>
+
+    <div class="cover">
+      <p class="restaurant-name">Jimmy's Diner</p>
+      <p class="motto">The best burgers and pizzas in town</p>
+    </div>
+
+    <div id="container" class="menu-container">
+      <!-- Menu here -->
+    </div>
+    <div class="order-section" id="order-section">
+      <p class="order-header">Your order</p>
+      <div class="order-container">
+        <!-- Ordered items will be displayed here -->
+        <div class="order">
+          <div class="order-right">
+            <p class="order-item">Burger</p>
+            <p class="order-remove">remove</p>
+          </div>
+          <p class="order-price">$12</p>
+        </div>
+        <div class="order">
+          <div class="order-right">
+            <p class="order-item">Beer</p>
+            <p class="order-remove">remove</p>
+          </div>
+          <p class="order-price">$12</p>
+        </div>
+        <!-- Ordered items will end here -->
+      </div>
+      <div class="order-total">
+        <p class="order-item">Total price:</p>
+        <p class="order-price">$24</p>
+      </div>
+      <button class="order-complete">Complete order</button>
+    </div>
+  </body>
+</html>

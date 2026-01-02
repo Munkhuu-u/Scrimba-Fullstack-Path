@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  max-width: 600px;
+  padding: 0px 46px;
+}
+
+/* .hidden {
+  display: none;
+} */
+
+.cover {
+  background-image: url("/images/cover.png");
+  background-size: cover;
+  color: white;
+  padding: 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  margin-bottom: 67px;
+}
+
+.restaurant-name {
+  font-family: "Smythe", system-ui;
+  font-size: 39px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.motto {
+  font-family: "Smythe", system-ui;
+  font-size: 22px;
+  line-height: 13.8px;
+  font-weight: 400;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  margin-bottom: 64px;
+}
+
+.food-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 51px;
+}
+
+.meal-right {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.meal-emoji {
+  font-size: 78.72px;
+  line-height: 98.4px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.meal-name {
+  font-size: 28px;
+  font-family: "Smythe", system-ui;
+  line-height: 16.8px;
+  font-weight: 400;
+}
+
+.meal-ingredient {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Smythe", system-ui;
+  color: #8b8b8b;
+}
+
+.meal-price {
+  font-size: 20px;
+  font-family: "Smythe", system-ui;
+  line-height: 24px;
+}
+
+#add-button {
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  border: 1.5px solid #dedede;
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  color: #3c3c3c;
+  text-align: center;
+}
+
+.order-section {
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.order-container {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #393333;
+  margin-bottom: 14px;
+}
+
+.order-header {
+  font-family: "Smythe", system-ui;
+  font-size: 28px;
+  line-height: 16.8px;
+  font-weight: 400;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.order {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.order-right {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.order-item {
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Smythe", system-ui;
+  line-height: 16.8px;
+}
+
+.order-remove {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Smythe", system-ui;
+  color: #bbbbbb;
+  line-height: 24px;
+}
+
+.order-price {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: "Smythe", system-ui;
+}
+
+.order-total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Smythe", system-ui;
+  font-size: 28px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-bottom: 53px;
+}
+
+.order-complete {
+  background-color: #16db99;
+  color: white;
+  font-family: Verdana, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  height: 60px;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+}
