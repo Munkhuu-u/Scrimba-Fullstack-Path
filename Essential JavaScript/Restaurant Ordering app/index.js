@@ -14,10 +14,23 @@ function pushToOrderArray(foodId) {
       return food.id == foodId;
     })[0]
   );
+  console.log(orderArray);
   renderOrderItems();
 }
 
-function renderOrderItems() {}
+function renderOrderItems() {
+  let orderString = "";
+  orderArray.forEach((food) => {
+    orderString += `        <div class="order">
+          <div class="order-right">
+            <p class="order-item">${food.name}</p>
+            <p class="order-remove">remove</p>
+          </div>
+          <p class="order-price">$${food.price}</p>
+        </div>`;
+  });
+  document.getElementById("order-container").innerHTML = orderString;
+}
 
 function stringMaker() {
   let string = "";
