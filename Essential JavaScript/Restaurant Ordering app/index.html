@@ -47,7 +47,37 @@
         <p class="order-item">Total price:</p>
         <p class="order-price">$24</p>
       </div>
-      <button class="order-complete">Complete order</button>
+      <button class="order-complete" id="completeOrderBtn">
+        Complete order
+      </button>
+    </div>
+    <div class="modalOverlay" id="modalOverlay">
+      <div id="payModal" class="modal">
+        <!-- Payment modal -->
+        <p id="modalHeader">Enter card details</p>
+        <form>
+          <input type="text" name="name" placeholder="Enter your name" />
+          <input
+            type="text"
+            name="cardNumber"
+            placeholder="Enter card number"
+            oninput="this.value = this.value
+                  .replace(/\D/g, '')
+                  .replace(/(.{4})/g, '$1-')
+                  .slice(0,19);
+                  "
+          />
+          <input
+            type="number"
+            placeholder="Enter CVV"
+            oninput="this.value = this.value.slice(0,3)"
+          />
+          <input type="submit" value="Pay" id="submit" />
+        </form>
+      </div>
+    </div>
+    <div>
+      <p>© 2024 Jimmy's Diner. All rights reserved.</p>
     </div>
   </body>
 </html>
