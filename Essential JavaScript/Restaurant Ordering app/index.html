@@ -19,65 +19,64 @@
       <p class="restaurant-name">Jimmy's Diner</p>
       <p class="motto">The best burgers and pizzas in town</p>
     </div>
-
     <div id="container" class="menu-container">
       <!-- Menu here -->
     </div>
-    <div class="order-section" id="order-section">
+    <!-- Order -->
+    <div class="order-section hidden" id="order-section">
       <p class="order-header">Your order</p>
       <div class="order-container" id="order-container">
         <!-- Ordered items will be displayed here -->
-        <div class="order">
-          <div class="order-right">
-            <p class="order-item">Burger</p>
-            <p class="order-remove">remove</p>
-          </div>
-          <p class="order-price">$12</p>
-        </div>
-        <div class="order">
-          <div class="order-right">
-            <p class="order-item">Beer</p>
-            <p class="order-remove">remove</p>
-          </div>
-          <p class="order-price">$12</p>
-        </div>
-        <!-- Ordered items will end here -->
       </div>
-      <div class="order-total">
-        <p class="order-item">Total price:</p>
-        <p class="order-price">$24</p>
+      <div class="order-total" id="order-total">
+        <!-- Ordered total will be displayed here -->
       </div>
       <button class="order-complete" id="completeOrderBtn">
         Complete order
       </button>
     </div>
+    <!-- Modal overlay -->
     <div class="modalOverlay" id="modalOverlay">
       <div id="payModal" class="modal">
         <!-- Payment modal -->
         <p id="modalHeader">Enter card details</p>
-        <form>
-          <input type="text" name="name" placeholder="Enter your name" />
+        <form name="paymentForm" id="paymentForm">
+          <input
+            type="text"
+            name="name"
+            id="nameInput"
+            placeholder="Enter your name"
+            required
+          />
           <input
             type="text"
             name="cardNumber"
+            id="cardNumber"
             placeholder="Enter card number"
             oninput="this.value = this.value
                   .replace(/\D/g, '')
                   .replace(/(.{4})/g, '$1-')
                   .slice(0,19);
                   "
+            required
           />
           <input
-            type="number"
+            type="text"
+            name="cvvNumber"
             placeholder="Enter CVV"
             oninput="this.value = this.value.slice(0,3)"
           />
+
           <input type="submit" value="Pay" id="submit" />
         </form>
       </div>
     </div>
-    <div>
-      <p>© 2024 Jimmy's Diner. All rights reserved.</p>
+    <!-- <div class="thanks hidden" id="thanks"> -->
+    <div class="thanks hidden" id="thanks">
+      <p>
+        Thanks, Munkhbat Nagdalsuren!<br />
+        Your order is on its way!
+      </p>
     </div>
   </body>
 </html>

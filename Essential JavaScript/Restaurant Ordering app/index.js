@@ -4,15 +4,48 @@ document.addEventListener("click", function (e) {
   if (e.target.dataset.add) {
     const foodId = e.target.dataset.add;
     pushToOrderArray(foodId);
-    document.getElementById("order-section").style.display = "block";
+    if (document.getElementById("order-section").classList.contains("hidden")) {
+      document.getElementById("order-section").classList.toggle("hidden");
+    }
   } else if (e.target.id === "remove") {
     removeOrder(e.target.dataset.orderid);
   } else if (e.target.id === "completeOrderBtn") {
     showPayModal();
+  } else if (e.target.id === "submit") {
+    e.preventDefault();
+    validateForm();
   }
 });
+
+function validateForm() {
+  const data = new FormData(document.getElementById("paymentForm"));
+  console.log(data.get("name"), data.get("cardNumber"), data.get("cvvNumber"));
+
+  if (
+    data.get("name") &&
+    data.get("cardNumber").length == 19 &&
+    data.get("cvvNumber").length == 3
+  ) {
+    submitOrder(data);
+  } else {
+    alert("Filled out correctly");
+  }
+}
+
+function submitOrder(data) {
+  document.getElementById("paymentForm").reset();
+  document.getElementById("payModal").style.display = "none";
+  document.getElementById("modalOverlay").style.display = "none";
+
+  document.getElementById("thanks").classList.toggle("hidden");
+  document.getElementById("order-section").classList.toggle("hidden");
+
+  document.getElementById("thanks").innerHTML = `<p>Thanks, ${data.get(
+    "name"
+  )}! Your order is on its way!</p>`;
+}
+
 function showPayModal() {
-  console.log("button works");
   document.getElementById("payModal").style.display = "block";
   document.getElementById("modalOverlay").style.display = "block";
 }
@@ -43,7 +76,14 @@ function renderOrderItems() {
           <p class="order-price">$${food.price}</p>
         </div>`;
   });
+
+  let totalArray = `<p class="order-item">Total price:</p><p class="order-price">$${orderArray.reduce(
+    (total, food) => total + food.price,
+    0
+  )}</p>`;
+
   document.getElementById("order-container").innerHTML = orderString;
+  document.getElementById("order-total").innerHTML = totalArray;
 }
 
 function stringMaker() {

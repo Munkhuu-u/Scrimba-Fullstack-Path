@@ -103,7 +103,6 @@ body {
 .order-section {
   width: 100%;
   text-align: center;
-  display: none;
 }
 
 .order-container {
@@ -188,7 +187,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgb(0, 128, 0, 0.3);
+  background-color: rgba(53, 53, 53, 0.6);
   z-index: 1001;
   display: none;
 }
@@ -199,7 +198,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background: pink;
+  background: white;
   padding: 47.23px 24.87px 29.85px 23.22px;
   border-radius: 8px;
   z-index: 1100;
@@ -233,4 +232,27 @@ input {
 
 #submit {
   margin-top: 23px;
+  background-color: #16db99;
+  font-family: "Verdana", sans-serif;
+  font-size: 20px;
+  line-height: 31px;
+  font-weight: 700;
+  color: white;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.thanks {
+  color: #065f46;
+  background-color: #ecfdf5;
+  border-radius: 0px;
+  border: none;
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 32px;
+  font-family: "smythe", system-ui;
+  font-weight: 400;
 }
