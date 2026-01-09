@@ -2,11 +2,7 @@ import { menuArray, orderArray } from "./data.js";
 
 document.addEventListener("click", function (e) {
   if (e.target.dataset.add) {
-    const foodId = e.target.dataset.add;
-    pushToOrderArray(foodId);
-    if (document.getElementById("order-section").classList.contains("hidden")) {
-      document.getElementById("order-section").classList.toggle("hidden");
-    }
+    pushToOrderArray(e.target.dataset.add);
   } else if (e.target.id === "remove") {
     removeOrder(e.target.dataset.orderid);
   } else if (e.target.id === "completeOrderBtn") {
@@ -32,7 +28,8 @@ function validateForm() {
   }
 }
 
-function submitOrder(data) {
+function submitOrder() {
+  const data = new FormData(document.getElementById("paymentForm"));
   document.getElementById("paymentForm").reset();
   document.getElementById("payModal").style.display = "none";
   document.getElementById("modalOverlay").style.display = "none";
@@ -42,7 +39,7 @@ function submitOrder(data) {
 
   document.getElementById("thanks").innerHTML = `<p>Thanks, ${data.get(
     "name"
-  )}! Your order is on its way!</p>`;
+  )}! <br/> Your order is on its way!</p>`;
 }
 
 function showPayModal() {
@@ -58,6 +55,9 @@ function removeOrder(orderID) {
 }
 
 function pushToOrderArray(foodId) {
+  if (document.getElementById("order-section").classList.contains("hidden")) {
+    document.getElementById("order-section").classList.toggle("hidden");
+  }
   let originalObject = menuArray.filter((food) => food.id == foodId)[0];
   let pushingObject = { ...originalObject, orderID: crypto.randomUUID() };
   orderArray.push(pushingObject);
