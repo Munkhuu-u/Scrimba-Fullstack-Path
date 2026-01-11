@@ -1,0 +1,49 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  max-width: 50vw;
+  font-family: "Inter", sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+select {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+}
+
+.complete {
+  position: relative;
+  width: 100%;
+}
+
+.color {
+  height: 100%;
+}
+
+.name {
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+}

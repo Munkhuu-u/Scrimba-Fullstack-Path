@@ -1,0 +1,9 @@
+create form 
+    - color 
+    - options from api choices 
+    - when submit get form info
+    - write query to get color palete
+
+loop
+    - create div and text
+    - assign color codes to background
