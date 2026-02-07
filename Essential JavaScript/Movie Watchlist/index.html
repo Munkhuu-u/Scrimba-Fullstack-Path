@@ -14,17 +14,399 @@
       <p id="watchlist" class="closed">My Watchlist</p>
     </div>
     <form id="form">
-      <input type="text" placeholder="Searching for a movie" name="movieName" />
+      <label for="onlyInput">
+        <!-- <img src="icons/search.svg" alt="magnifier icon" /> -->
+      </label>
+      <input
+        type="text"
+        placeholder="Searching for a movie"
+        name="movieName"
+        id="onlyInput"
+      />
       <button type="submit" id="submit">Search</button>
     </form>
     <div id="movieContainer">
-        <!-- movie div start here -->
-        <!-- movie div end here   -->
+      <!-- movie div start here -->
+
+      <!-- TEMP -->
+      <!-- <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BOWQ4YTBmNTQtMDYxMC00NGFjLTkwOGQtNzdhNmY1Nzc1MzUxXkEyXkFqcGc@._V1_SX300.jpg"
+            alt="Blade Runner"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">Blade Runner</p>
+            <p>⭐</p>
+            <p class="movieRating">8.1/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">117 min</p>
+            <p class="genres">Action, Drama, Sci-Fi</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt0083658"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >A blade runner must pursue and terminate four replicants who
+              stole a ship in space and have returned</span
+            >
+            <span class="dots">...</span>
+            <span class="descLast"> to Earth to find their creator.</span>
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div id="whenEmpty">
+      <div class="seperator"></div>
+      <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_SX300.jpg"
+            alt="Blade Runner 2049"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">Blade Runner 2049</p>
+            <p>⭐</p>
+            <p class="movieRating">8.0/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">164 min</p>
+            <p class="genres">Action, Drama, Mystery</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt1856101"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >Young Blade Runner K's discovery of a long-buried secret leads
+              him to track down former Blade Runner</span
+            >
+            <span class="dots">...</span>
+            <span class="descLast">
+              Rick Deckard, who's been missing for thirty years.</span
+            >
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="seperator"></div>
+      <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BZGNiNmNiMTctMDI4OS00OWYxLWE4ZWEtZjFkZjU4ZmY5YzEyXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_SX300.jpg"
+            alt="Blade Runner: Black Out 2022"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">Blade Runner: Black Out 2022</p>
+            <p>⭐</p>
+            <p class="movieRating">7.3/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">15 min</p>
+            <p class="genres">Animation, Short, Sci-Fi</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt7428594"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >In 2022, a powerful weapon causes a global blackout that has
+              massive implications all over the world</span
+            >
+            <span class="dots">...</span>
+            <span class="descLast">.</span>
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="seperator"></div>
+      <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BZDYzYWI2NzYtOWNkMS00YzA4LThlNWEtNmMxNDIwYmVmYTgzXkEyXkFqcGc@._V1_SX300.jpg"
+            alt="Blade Runner: Black Lotus"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">Blade Runner: Black Lotus</p>
+            <p>⭐</p>
+            <p class="movieRating">6.3/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">1 min</p>
+            <p class="genres">Animation, Action, Drama</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt9359796"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >In Los Angeles 2032, a young woman wakes up with no memories and
+              possessing deadly skills. The only
+            </span>
+            <span class="dots">...</span>
+            <span class="descLast"
+              >clues she has are a locked data device and a tattoo of a black
+              lotus. Putting together the pieces, she must find the truth of her
+              ...</span
+            >
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="seperator"></div>
+      <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BNzI2NjU0MjY4MF5BMl5BanBnXkFtZTgwMjM0NDQzNjE@._V1_SX300.jpg"
+            alt="Dangerous Days: Making Blade Runner"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">Dangerous Days: Making Blade Runner</p>
+            <p>⭐</p>
+            <p class="movieRating">8.3/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">214 min</p>
+            <p class="genres">Documentary</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt1080585"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >The definitive three-and-a-half hour documentary about the
+              troubled creation and enduring legacy of
+            </span>
+            <span class="dots">...</span>
+            <span class="descLast"
+              >the science fiction classic Blade Runner (1982), culled from 80
+              interviews and hours of never-before-seen outtakes and lost
+              footage.</span
+            >
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="seperator"></div>
+      <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BYWRkYjczZWMtN2Q5NS00YWFmLTk3M2MtNWUwNWRjYzdkMjZhXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg"
+            alt="Blade Runner"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">Blade Runner</p>
+            <p>⭐</p>
+            <p class="movieRating">8.9/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">N/A</p>
+            <p class="genres">Action, Adventure, Crime, Romance, Sci-Fi</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt0126817"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >You play a blade runner investigating a series of violent
+              replicant crimes, only to discover far mor</span
+            >
+            <span class="dots">...</span>
+            <span class="descLast">e than you bargained for.</span>
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="seperator"></div>
+      <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BNjZiMjYwMTMtNjY1Yi00MGI5LTk1MGUtOTdhMDAzMWJjMjBhXkEyXkFqcGc@._V1_SX300.jpg"
+            alt="Oscar Pistorius: Blade Runner Killer"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">Oscar Pistorius: Blade Runner Killer</p>
+            <p>⭐</p>
+            <p class="movieRating">5.1/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">90 min</p>
+            <p class="genres">Drama</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt7445510"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >Oscar Pistorius, a South African Paralympian, rose to fame
+              through a romantic relationship with mode</span
+            >
+            <span class="dots">...</span>
+            <span class="descLast"
+              >l Reeva Steenkamp, leading to her tragic death on Valentine's
+              Day.</span
+            >
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="seperator"></div>
+      <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BMGRhY2RlMWYtOGQ4Yi00NmMxLWJiZDUtZmRkZjYzYWRlNmExXkEyXkFqcGdeQXVyMTQxNzE3ODA3._V1_SX300.jpg"
+            alt="On the Edge of 'Blade Runner'"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">On the Edge of 'Blade Runner'</p>
+            <p>⭐</p>
+            <p class="movieRating">7.5/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">52 min</p>
+            <p class="genres">Documentary</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt0281011"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >About the epic film "Blade Runner," giving insights into its
+              history with interviews of Ridley Scott</span
+            >
+            <span class="dots">...</span>
+            <span class="descLast"
+              >, the writers, and nearly all of the cast. There are also
+              interviews with production staff, giving details into the creative
+              proce...</span
+            >
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="seperator"></div>
+      <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BMmQ1NDA5YWMtMGE5NC00MTU1LTkxNTMtZThkNDg4ZTNjODUzXkEyXkFqcGc@._V1_SX300.jpg"
+            alt="Phenomenon Blade Runner"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">Phenomenon Blade Runner</p>
+            <p>⭐</p>
+            <p class="movieRating">6.5/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">53 min</p>
+            <p class="genres">Documentary</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt14730032"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >In 1982 a film came to the cinema that is set in the near future
+              of Los Angeles in 2019 and itself c</span
+            >
+            <span class="dots">...</span>
+            <span class="descLast"
+              >hanged the future of cinema as it is one of the most influential
+              science fiction films ever and achieved cult status among cinema
+              ...</span
+            >
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="seperator"></div>
+      <div class="movie">
+        <div class="movieImageContainer" id="">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BMmQ1NDA5YWMtMGE5NC00MTU1LTkxNTMtZThkNDg4ZTNjODUzXkEyXkFqcGc@._V1_SX300.jpg"
+            alt="Phenomenon Blade Runner"
+          />
+        </div>
+        <div class="textArea">
+          <div class="movieTitleContainer">
+            <p class="moiveTitle">Phenomenon Blade Runner</p>
+            <p>⭐</p>
+            <p class="movieRating">6.5/10</p>
+          </div>
+          <div class="movieProps">
+            <p class="duration">53 min</p>
+            <p class="genres">Documentary</p>
+            <button
+              class="addToOrRemoveFromWatchlist"
+              data-addToWatchlist="tt14730032"
+            >
+              Watchlist
+            </button>
+          </div>
+          <div class="descriptionContainer">
+            <span class="descFirst"
+              >In 1982 a film came to the cinema that is set in the near future
+              of Los Angeles in 2019 and itself c</span
+            >
+            <span class="dots">...</span>
+            <span class="descLast"
+              >hanged the future of cinema as it is one of the most influential
+              science fiction films ever and achieved cult status among cinema
+              ...</span
+            >
+            <button class="readMoreBtn">Read more</button>
+          </div>
+        </div>
+      </div> -->
+      <!-- TEMP -->
       <img src="icons/film.svg" alt="film-icon" />
       <p>Start exploring</p>
+      <!-- movie div end here   -->
     </div>
     <script src="index.js"></script>
   </body>

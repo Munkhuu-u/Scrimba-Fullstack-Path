@@ -13,7 +13,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: row;
-  /* flex-direction: row-reverse; */
   justify-content: space-around;
   align-items: center;
   text-align: center;
@@ -22,8 +21,6 @@ body {
   background-image: url("images/cover.png");
   background-repeat: no-repeat;
   background-size: cover;
-  /* overflow: hidden; */
-  /* background-position: center; */
 }
 
 #header::before {
@@ -69,13 +66,18 @@ form {
   margin-top: 10px;
 }
 
-form > div {
+form > label {
   position: absolute;
   left: 0;
-  /* background-color: aqua; */
+  height: 100%;
+  width: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("icons/search.svg");
-  background-size: cover;
-  color: black;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 input {
@@ -116,15 +118,19 @@ input:focus {
   line-height: 20px;
 }
 
-#whenEmpty {
+#movieContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200px;
   justify-content: center;
+  /* background-color: lightblue; */
+  gap: 15px;
+  margin: 61px 44px 0 44px;
+  padding: 0px 50px 0px 50px;
+  min-height: 200px;
 }
 
-#whenEmpty > p {
+#movieContainer > p {
   font-family: "Inter", sans-serif;
   font-size: 18px;
   line-height: 20px;
@@ -132,30 +138,36 @@ input:focus {
   color: #2e2e2f;
 }
 
-#movieContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 61 44 0 44;
+#movieContainer > button {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: white;
+  background: none;
+  border: none;
 }
 
 .movie {
   display: flex;
   flex-direction: row;
   gap: 21px;
+  width: 100%;
 }
-
-.movieImage {
+/* 
+.movieImageContainer {
   width: 100px;
-  /* height: 150px; */
-  background-image: url("https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_SX300.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+} */
+
+.movieImageContainer > img {
+  /* max-width: 150px; */
+  max-width: 120px;
 }
 
 .textArea {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   padding: 15 15 15 0;
   gap: 18px;
 }
@@ -167,6 +179,10 @@ input:focus {
   justify-content: start;
   align-items: center;
   gap: 10px;
+}
+
+.movie {
+  width: 100%;
 }
 
 .moiveTitle {
@@ -187,22 +203,51 @@ input:focus {
   display: flex;
   flex-direction: row;
   gap: 18px;
-
   font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
 }
 
-.description {
+.addToOrRemoveFromWatchlist {
+  border: none;
+  background: none;
+  color: white;
+  /* background-image: url("icons/plus.svg"); */
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 25px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.descriptionContainer {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   color: #a5a5a5;
+  overflow: hidden;
+}
+
+.descLast {
+  display: none;
+}
+
+.readMoreBtn {
+  background: none;
+  border: none;
+  color: rgb(47, 47, 255);
+  cursor: pointer;
+  display: inline;
 }
 
 .seperator {
-  margin: 20.59 0 25 0;
+  margin: 5 0 5 0;
+  /* border: 1.5px solid #2c2c2c; */
   border: 1.5px solid #2c2c2c;
+  width: 100%;
 }
