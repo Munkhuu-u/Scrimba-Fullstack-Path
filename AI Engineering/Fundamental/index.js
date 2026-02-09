@@ -63,7 +63,7 @@ async function fetchStockData() {
 async function fetchReport(data) {
 /** 
  * Challenge:
- * 1. Refactor this api call to include two examples. 
+ * 1. Refactor this api call to include two example. 
  *    Remember to use separators.
  * 
  * 🎁 See examples.md for examples
