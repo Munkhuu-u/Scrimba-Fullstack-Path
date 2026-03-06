@@ -1,15 +1,15 @@
 {
-  "name": "Scrim-s05r3d3",
-  "description": "https://scrimba.com/fullstack-path-c0fullstack/~0yhf",
+  "name": "aiei-1.3",
+  "version": "0.0.1",
+  "description": "1.3 Importing & Creating The OpenAI Client",
+  "main": "index.js",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "vite"
   },
   "dependencies": {
-    "openai": "4.14.2",
-    "vite": "latest"
+    "openai": "^6.15.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "vite": "^7.3.0"
+  }
 }
