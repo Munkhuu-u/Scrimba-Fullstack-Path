@@ -1,5 +1,8 @@
 import OpenAI from "openai";
 import { autoResizeTextarea, checkEnvironment, setLoading } from "./utils.js";
+import { marked } from "marked";
+import DOMPurify from "dompurify";
+
 checkEnvironment();
 
 // Initialize an OpenAI client for your provider using env vars
@@ -47,27 +50,10 @@ async function handleGiftRequest(e) {
   // Add user message to global messages array
   messages.push({ role: "user", content: userPrompt });
 
-  /**
-   * Challenge: Basic Error Handling
-   *
-   * Right now, if the AI request fails,
-   * the app will silently break.
-   *
-   * Your task:
-   *
-   * 1. Wrap the AI request in a try/catch block
-   * 2. If an error occurs:
-   *    - Log the error to the console
-   *    - Show a friendly message in the UI
-   * 3. Ensure loading always stops
-   *
-   * 💡 Check the hints folder for additional guidance!
-   */
-
   try {
     // Send a chat completions request and await its response
     const response = await openai.chat.completions.create({
-      model: "gpt-50",
+      model: process.env.AI_MODEL,
       messages,
     });
 
@@ -75,15 +61,37 @@ async function handleGiftRequest(e) {
     const giftSuggestions = response.choices[0].message.content;
     console.log(giftSuggestions);
 
-    // Display the gift suggestions
-    outputContent.textContent = giftSuggestions;
+    /**
+     * Challenge: Sanitize AI Output Before Rendering
+     *
+     * AI output must be treated as untrusted input.
+     *
+     * Your task:
+     *
+     * 1. Sanitize the rendered HTML before inserting it into the DOM
+     * 2. Ensure no scripts or unsafe HTML can run
+     *
+     *
+     * We’ll use DOMPurify for sanitization.
+     *
+     * 💡 Check the hints folder for more guidance!
+     */
 
+    const html = marked.parse(giftSuggestions)
+
+    const safeHTML = DOMPurify.sanitize(html)
+    
+    // Display the gift suggestions 
+    outputContent.innerHTML = safeHTML
   } catch (error) {
-    console.error(error)
-    outputContent.textContent = 
-      "Sorry, I can't access what I need right now. Please try again."
+    // Log the error for debugging
+    console.error(error);
+
+    // Show a friendly error message to the user
+    outputContent.textContent =
+      "Sorry, I can't access what I need right now. Please try again in a bit.";
   } finally {
-    // Clear loading state
+    // Always clear loading state, whether request succeeds or fails
     setLoading(false);
   }
 }
