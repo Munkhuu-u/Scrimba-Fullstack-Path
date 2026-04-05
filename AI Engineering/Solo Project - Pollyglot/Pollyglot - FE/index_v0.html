@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Your HTML here -->
+    <form id="myForm">
+      <label for="orignalText">Original:</label>
+      <input type="text" id="orignalText" name="orignalText" />
+      <p>Select your gender:</p>
+
+      <label>
+        <input type="radio" name="language" value="French" />
+        French
+      </label>
+      <label>
+        <input type="radio" name="language" value="Spanish" />
+        Spanish
+      </label>
+      <label>
+        <input type="radio" name="language" value="Japanese" checked />
+        Japanese
+      </label>
+      <button type="submit">Translate</button>
+    </form>
+    <p id="translated-response">Translated text here</p>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

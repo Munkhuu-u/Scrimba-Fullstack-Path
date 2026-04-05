@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PollyGlot</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1>🌍 PollyGlot</h1>
+        <p class="subtitle">Translate text into any language</p>
+      </header>
+
+      <!-- Form Card -->
+      <main class="card">
+        <form id="myForm" class="form">
+          <!-- Input -->
+          <div class="form-group">
+            <label for="orignalText">Original Text</label>
+            <textarea
+              id="orignalText"
+              name="orignalText"
+              placeholder="Enter text to translate..."
+              required
+            ></textarea>
+          </div>
+
+          <!-- Language Options -->
+          <div class="form-group">
+            <p class="label">Select Language</p>
+
+            <label class="radio">
+              <input type="radio" name="language" value="French" />
+              <span>French 🇫🇷</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="language" value="Spanish" />
+              <span>Spanish 🇪🇸</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="language" value="Japanese" checked />
+              <span>Japanese 🇯🇵</span>
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn">Translate</button>
+        </form>
+      </main>
+
+      <!-- Result -->
+      <section class="result">
+        <p id="translated-response">Translated text will appear here...</p>
+      </section>
+    </div>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PopChoice — Your Movie</title>
+  <link rel="stylesheet" href="../index.css" />
+</head>
+<body class="movie-body">
+<div class="phone">
+
+  <!-- Loading state (shown briefly) -->
+  <div class="page page-movie-loading" id="loading-view">
+    <div class="loading-state">
+      <div class="loading-popcorn">🍿</div>
+      <div class="loading-text">Picking your movie<span class="dots"></span></div>
+      <div class="loading-sub">Crunching everyone's tastes</div>
+    </div>
+  </div>
+
+  <!-- Movie view (hidden until data loads) -->
+  <div class="page page-movie is-hidden" id="movie-view">
+    <div class="movie-info">
+      <div class="movie-title" id="movie-title">Loading…</div>
+
+      <div class="poster-wrap" id="poster-wrap">
+        <div class="poster-placeholder">
+          <span>🎬</span>
+        </div>
+        <div class="poster-overlay"></div>
+      </div>
+      <div class="movie-desc" id="movie-desc">Please wait.</div>
+
+      <div class="spacer"></div>
+
+      <div class="actions">
+        <button class="btn-primary" id="btn-next-movie" type="button">Next Movie</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script type="module" src="../index.js"></script>
+</body>
+</html>

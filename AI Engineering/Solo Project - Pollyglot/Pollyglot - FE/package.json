@@ -1,0 +1,16 @@
+{
+  "name": "Scrim-s05rqc4",
+  "description": "https://scrimba.com/fullstack-path-c0fullstack/~0xrr",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "server": "node server.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "vite": "latest"
+  }
+}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PopChoice — Questions</title>
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <div class="phone">
+      <div class="page page-question">
+        <!-- Progress -->
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <!-- Person indicator -->
+        <div class="person-badge">
+          <div class="popcorn popcorn-question">🍿</div>
+          <div class="person-number" id="person-number">1</div>
+        </div>
+
+        <!-- Questions -->
+        <div class="question-stack stagger">
+          <div class="question-card">
+            <div class="question-label">
+              What's your favorite movie and why?
+            </div>
+            <textarea
+              id="q-fav-movie"
+              placeholder="e.g. The Shawshank Redemption — it taught me to never give up hope no matter how hard life gets"
+            >
+it taught me to never give up hope no matter how hard life gets</textarea
+            >
+          </div>
+
+          <div class="divider-thin"></div>
+
+          <div class="question-card">
+            <div class="question-label">
+              Are you in the mood for something new or a classic?
+            </div>
+            <div class="chips">
+              <button
+                class="chip"
+                data-group="newclassic"
+                data-val="New"
+                type="button"
+              >
+                New
+              </button>
+              <button
+                class="chip"
+                data-group="newclassic"
+                data-val="Classic"
+                type="button"
+              >
+                Classic
+              </button>
+            </div>
+          </div>
+
+          <div class="divider-thin"></div>
+
+          <div class="question-card">
+            <div class="question-label">What are you in the mood for?</div>
+            <div class="chips">
+              <button
+                class="chip"
+                data-group="mood"
+                data-val="Fun"
+                type="button"
+              >
+                Fun
+              </button>
+              <button
+                class="chip"
+                data-group="mood"
+                data-val="Serious"
+                type="button"
+              >
+                Serious
+              </button>
+              <button
+                class="chip"
+                data-group="mood"
+                data-val="Inspiring"
+                type="button"
+              >
+                Inspiring
+              </button>
+              <button
+                class="chip"
+                data-group="mood"
+                data-val="Scary"
+                type="button"
+              >
+                Scary
+              </button>
+            </div>
+          </div>
+
+          <div class="divider-thin"></div>
+
+          <div class="question-card">
+            <div class="question-label">
+              Which famous film person would you love to be stranded on an
+              island with and why?
+            </div>
+            <textarea
+              id="q-island"
+              placeholder="e.g. Tom Hanks — he's funny and already knows how to survive on an island!"
+            >
+tom hanks</textarea
+            >
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+        <button class="btn-primary" id="btn-next" type="button">
+          Next Person
+        </button>
+        <a href="../index.html" class="nav-link nav-link-restart"
+          >← Start over</a
+        >
+      </div>
+    </div>
+    <script type="module" src="../index.js"></script>
+  </body>
+</html>

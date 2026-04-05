@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Picker</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="phone">
+      <div class="page page-home">
+        <div class="logo-wrap stagger">
+          <div class="popcorn">🍿</div>
+          <div class="logo-title">PopChoice</div>
+        </div>
+
+        <div class="form-stack stagger">
+          <div class="field">
+            <div class="input-label">Number of people</div>
+            <input
+              type="number"
+              id="num-people"
+              min="1"
+              max="20"
+              placeholder="e.g. 5"
+            />
+          </div>
+
+          <div class="field">
+            <div class="input-label">Time available</div>
+            <input
+              type="text"
+              id="time-available"
+              placeholder="e.g. 2 hours 30 minutes"
+            />
+          </div>
+        </div>
+
+        <button class="btn-primary" id="btn-start">Start</button>
+      </div>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
